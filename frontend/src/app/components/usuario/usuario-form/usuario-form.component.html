@@ -1,0 +1,19 @@
+<div class="usuario-form-container">
+  <h2>Novo Usuário</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nome">Nome:</label>
+      <input id="nome" name="nome" [(ngModel)]="usuario.nome" required />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" name="email" [(ngModel)]="usuario.email" required />
+    </div>
+    <div>
+      <label for="senha">Senha:</label>
+      <input id="senha" name="senha" type="password" [(ngModel)]="usuario.senha" required />
+    </div>
+    <button type="submit">Salvar</button>
+    <div *ngIf="mensagem" class="sucesso">{{ mensagem }}</div>
+  </form>
+</div>

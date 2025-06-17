@@ -1,0 +1,19 @@
+<div class="autor-form-container">
+  <h2>{{ editando ? 'Editar' : 'Novo' }} Autor</h2>
+  <form (ngSubmit)="onSubmit()">
+  <div>
+  <label for="nome">Nome:</label>
+  <input id="nome" name="nome" [(ngModel)]="autor.nome" required />
+</div>
+<div>
+  <label for="email">E-mail:</label>
+  <input id="email" name="email" [(ngModel)]="autor.email" />
+</div>
+<div>
+  <label for="contato">Contato:</label>
+  <input id="contato" name="contato" [(ngModel)]="autor.contato" />
+</div>
+    <button type="submit">Salvar</button>
+    <div *ngIf="mensagem" class="sucesso">{{ mensagem }}</div>
+  </form>
+</div>

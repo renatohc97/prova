@@ -1,0 +1,26 @@
+<div class="livro-list-container">
+  <h2>Livros</h2>
+  <button [routerLink]="['/livros/novo']">Novo Livro</button>
+  <table *ngIf="livros && livros.length">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <td>{{ livro.id }}</td>
+        <td>{{ livro.nome }}</td>
+        <td>
+          <button [routerLink]="['/livros/editar', livro.id]">Editar</button>
+          <button (click)="excluirLivro(livro)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!livros || livros.length === 0">
+    Nenhum livro encontrado.
+  </div>
+</div>

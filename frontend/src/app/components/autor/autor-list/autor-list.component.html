@@ -1,0 +1,26 @@
+<div class="autor-list-container">
+  <h2>Autores</h2>
+  <button [routerLink]="['/autores/novo']">Novo Autor</button>
+  <table *ngIf="autores && autores.length">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let autor of autores">
+        <td>{{ autor.id }}</td>
+        <td>{{ autor.nome }}</td>
+        <td>
+          <button [routerLink]="['/autores/editar', autor.id]">Editar</button>
+          <button (click)="excluirAutor(autor)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!autores || autores.length === 0">
+    Nenhum autor encontrado.
+  </div>
+</div>

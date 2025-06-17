@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <span class="logo">Livraria CRUD</span>
+  <ul class="menu">
+    <li><a routerLink="/livros" *ngIf="authService.isLoggedIn()">Livros</a></li>
+    <li><a routerLink="/autores" *ngIf="authService.isLoggedIn()">Autores</a></li>
+    <li><a routerLink="/usuarios" *ngIf="authService.isLoggedIn()">Usuários</a></li>
+    <li>
+      <button (click)="logout()" *ngIf="authService.isLoggedIn()">Sair</button>
+    </li>
+  </ul>
+</nav>

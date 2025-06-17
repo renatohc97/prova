@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #293241;
+  color: #fff;
+  padding: 12px 24px;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+.menu a, .menu button {
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.menu a:hover, .menu button:hover {
+  color: #e63946;
+}
